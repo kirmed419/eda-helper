@@ -109,6 +109,6 @@ Please ensure your code adheres to the existing style and passes all tests.
 
 ## Contact
 
-If you have any questions or suggestions, please open an issue on GitHub or contact kirouanemed@protonmail.com at kirouanemed@protonmail.com
+If you have any questions or suggestions, please open an issue on GitHub or contact me kirouanemed@protonmail.com.
 
 Happy analyzing!
