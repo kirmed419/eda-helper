@@ -23,8 +23,8 @@ This Data Analysis Web App is a full-stack application that allows users to uplo
 
 1. Clone the repository:
    ```
-   git clone https://github.com/yourusername/data-analysis-web-app.git
-   cd data-analysis-web-app
+   git clone https://github.com/kirmed419/eda-helper.git
+   cd eda-helper
    ```
 
 2. Create a virtual environment and activate it:
@@ -100,10 +100,6 @@ Contributions to this project are welcome! Please follow these steps:
 
 Please ensure your code adheres to the existing style and passes all tests.
 
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
 ## Acknowledgments
 
 - Flask documentation
@@ -113,6 +109,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Contact
 
-If you have any questions or suggestions, please open an issue on GitHub or contact [Your Name] at [your.email@example.com].
+If you have any questions or suggestions, please open an issue on GitHub or contact kirouanemed@protonmail.com at kirouanemed@protonmail.com
 
 Happy analyzing!
