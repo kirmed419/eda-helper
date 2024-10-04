@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Analysis Web App</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./static/css/styles.css">
+</head>
+<body class="font-sans">
+    <nav class="bg-blue-600 text-white p-4 shadow-lg">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold">Data Analysis App</h1>
+            <ul class="flex space-x-4">
+                <li><a href="#" class="hover:text-blue-200 transition duration-300" onclick="showSection('upload')">Upload</a></li>
+                <li><a href="#" class="hover:text-blue-200 transition duration-300" onclick="showSection('analyze')">Analyze</a></li>
+                <li><a href="#" class="hover:text-blue-200 transition duration-300" onclick="showSection('predict')">Predict</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container mx-auto mt-8 p-4">
+        <section id="upload" class="bg-white rounded-lg shadow-md p-6">
+            <h2 class="text-2xl font-semibold mb-4">Upload Dataset</h2>
+            <form id="upload-form" enctype="multipart/form-data">
+                <input type="file" name="file" accept=".csv" class="mb-4 p-2 border rounded">
+                <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition duration-300">Upload</button>
+            </form>
+            <div id="data-preview" class="mt-4"></div>
+        </section>
+
+        <section id="analyze" class="hidden bg-white rounded-lg shadow-md p-6 mt-8">
+            <h2 class="text-2xl font-semibold mb-4">Analyze Data</h2>
+            <form id="analyze-form">
+                <div class="mb-4">
+                    <label for="target" class="block mb-2">Target Variable:</label>
+                    <select id="target" name="target" class="w-full p-2 border rounded"></select>
+                </div>
+                <div class="mb-4">
+                    <label class="block mb-2">Feature Variables:</label>
+                    <button type="button" id="select-all-features" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition duration-300 mb-2">Select All Features</button>
+                    <div id="features" class="space-y-2"></div>
+                </div>
+                <button type="submit" class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 transition duration-300">Analyze</button>
+            </form>
+            <div id="results" class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-4"></div>
+        </section>
+
+        <section id="predict" class="hidden bg-white rounded-lg shadow-md p-6 mt-8">
+            <h2 class="text-2xl font-semibold mb-4">Train Model and Predict</h2>
+            <form id="train-form">
+                <div class="mb-4">
+                    <label for="train-test-ratio" class="block mb-2">Train/Test Split Ratio:</label>
+                    <input type="range" id="train-test-ratio" name="train_test_ratio" min="0.5" max="0.9" step="0.1" value="0.8" class="w-full">
+                    <input type="number" id="train-test-ratio-value" value="0.8" min="0.5" max="0.9" step="0.1" class="mt-2 p-2 border rounded">
+                </div>
+                <button type="submit" class="bg-yellow-500 text-white px-4 py-2 rounded hover:bg-yellow-600 transition duration-300">Train Gradient Boosting Model</button>
+            </form>
+            <div id="train-results" class="mt-4"></div>
+            <div id="sample-prediction" class="mt-8">
+                <h3 class="text-xl font-semibold mb-2">Predict New Samples</h3>
+                <form id="sample-form" enctype="multipart/form-data">
+                    <input type="file" name="sample_file" accept=".csv" class="mb-4 p-2 border rounded">
+                    <button type="submit" class="bg-purple-500 text-white px-4 py-2 rounded hover:bg-purple-600 transition duration-300">Predict Sample</button>
+                </form>
+                <div id="sample-results" class="mt-4"></div>
+                <div id="train-results" class="mt-4"></div>
+            </div>
+        </section>
+    </main>
+
+    <script src="static/js/main.js"></script>
+</body>
+</html>
